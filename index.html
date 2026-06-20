@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Hut</title>
+  <meta name="description" content="Creative Hut: small-batch, hand-poured soy candles made at home. Clean burn, slow-made scents. Order by email." />
+  <link rel="icon" href="logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="candle.css?v=2" />
+</head>
+<body>
+  <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+      <img class="brand-logo" src="logo.png" alt="Creative Hut logo" />
+      <span class="brand-name">Creative Hut</span>
+    </a>
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#order">How to order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="order-pill" id="trayToggle" aria-haspopup="dialog" aria-expanded="false">
+      Order
+      <span class="order-count" id="orderCountTop">0</span>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===== Offers Banner ===== -->
+  <!-- To show an offer: set display to "flex" on .offer-banner in candle.css, or just remove the "hidden" class below -->
+  <div class="offer-banner" id="offerBanner" hidden>
+    <p class="offer-text">
+      <strong>Special offer:</strong> Buy 3 Small Candles for 15$, Use code: 3FOR15
+    </p>
+    <button class="offer-close" id="offerClose" aria-label="Dismiss offer">✕</button>
+  </div>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <img class="hero-logo" src="logo.png" alt="Creative Hut" />
+      <p class="eyebrow">Hand-poured · Small batch</p>
+      <h1 class="hero-title">A little warmth,<br />made by hand.</h1>
+      <p class="hero-sub">
+        Slow-poured soy candles from our little hut. Clean cotton wicks,
+        honest scents, and a glow that makes any evening feel softer.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="#shop">Browse the candles</a>
+        <a class="btn btn-ghost" href="#story">Our story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Shop ===== -->
+  <section class="section" id="shop">
+    <div class="section-head">
+      <p class="eyebrow">The collection</p>
+      <h2 class="section-title">This season's scents</h2>
+      <p class="section-note">Tap <strong>Add to order</strong> on any candle. When you're ready, send the whole list to us in one tap.</p>
+    </div>
+    <div class="product-grid" id="productGrid">
+      <!-- Cards are rendered by candle.js -->
+    </div>
+  </section>
+
+  <!-- ===== Story ===== -->
+  <section class="section story" id="story">
+    <div class="story-grid">
+      <div class="story-photo-wrap">
+        <img src="Image7.jpg" alt="Creative Hut candle surrounded by flowers" class="story-photo" />
+      </div>
+      <div class="story-text">
+        <p class="eyebrow">Our story</p>
+        <h2 class="section-title">Hi, I'm Pravallika</h2>
+        <p>
+          I'm the heart behind this small business journey, which started back
+          in 2022. It all began during the COVID days when I stumbled across
+          inspiring small business videos on my For You page. I couldn't stop
+          thinking about starting something of my own, and with a little
+          encouragement from my mom, I did just that!
+        </p>
+        <p>
+          Each year since then, I've explored something new: resin keychains
+          in my first year, polymer clay earrings the next, then candles with
+          soy wax, and last summer I brought back resin keychains and added
+          coasters and bookmarks to the mix. It's been such a fun, creative
+          ride, thanks to your amazing support, it keeps growing!
+        </p>
+        <p>
+          This year, I'm bringing back your favorite candles. Can't wait for
+          you to see what I've been working on!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Progress / Gallery Slideshow ===== -->
+  <section class="section gallery-section" id="gallery">
+    <div class="section-head">
+      <p class="eyebrow">Behind the craft</p>
+      <h2 class="section-title">Watch it come together</h2>
+      <p class="section-note">A peek into how every candle is made, one pour at a time.</p>
+    </div>
+    <div class="slideshow" id="slideshow" aria-label="Progress photo gallery">
+      <div class="slideshow-track" id="slideshowTrack">
+        <!-- Add your progress photos here — copy this block for each photo -->
+        <div class="slide"><img src="Image1.jpeg" alt="Progress photo 1" loading="lazy" /></div>
+        <div class="slide"><img src="Image2.jpeg" alt="Progress photo 2" loading="lazy" /></div>
+        <div class="slide"><img src="Image3.jpeg" alt="Progress photo 3" loading="lazy" /></div>
+        <div class="slide"><img src="Image4.jpeg" alt="Progress photo 4" loading="lazy" /></div>
+        <div class="slide"><img src="Image6.jpeg" alt="Progress photo 5" loading="lazy" /></div>
+        <div class="slide"><img src="Image7.jpg"  alt="Progress photo 6" loading="lazy" /></div>
+      </div>
+      <button class="slide-arrow slide-prev" id="slidePrev" aria-label="Previous photo">&#8592;</button>
+      <button class="slide-arrow slide-next" id="slideNext" aria-label="Next photo">&#8594;</button>
+      <div class="slide-dots" id="slideDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== How to order ===== -->
+  <section class="section order" id="order">
+    <div class="section-head">
+      <p class="eyebrow">How to order</p>
+      <h2 class="section-title">Three easy steps</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <h3>Pick your candles</h3>
+        <p>Add the ones you love to your order using the buttons above.</p>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <h3>Send your list</h3>
+        <p>Tap order and email us your list straight from the site, no account needed.</p>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <h3>We confirm &amp; arrange</h3>
+        <p>We reply with the total, payment, and pickup or delivery details.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===== Contact form ===== -->
+  <section class="section contact" id="contact">
+    <div class="contact-card">
+      <div class="contact-intro">
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="section-title">Questions &amp; Hellos</h2>
+        <p class="contact-note">
+          Order help, candles for a wedding or event, or just have a
+          question? Send a note and we'll get back to you.
+        </p>
+        <ul class="contact-points">
+          <li>Queries &amp; doubts</li>
+          <li>Wedding &amp; event favors</li>
+          <li>Gift sets &amp; bulk orders</li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <!-- Spam trap: hidden from people, bots tend to fill it -->
+        <input type="checkbox" id="cfBotcheck" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="field">
+          <label for="cfName">Name</label>
+          <input type="text" id="cfName" name="name" placeholder="Your name" required />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="cfEmail">Email</label>
+            <input type="email" id="cfEmail" name="email" placeholder="you@email.com" />
+          </div>
+          <div class="field">
+            <label for="cfPhone">Phone <span class="opt">(optional)</span></label>
+            <input type="tel" id="cfPhone" name="phone" placeholder="Phone number" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="cfMessage">Message</label>
+          <textarea id="cfMessage" name="message" rows="5" placeholder="Tell us what you're looking for…" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-amber">Send message</button>
+        </div>
+        <p class="form-status" id="cfStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="logo.png" alt="Creative Hut logo" />
+        <div>
+          <span class="brand-name">Creative Hut</span>
+          <p class="footer-tag">Hand-poured candles, made at home.</p>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <p>Get in touch with us:</p>
+        <a href="mailto:info@creativehut.com" id="footerEmail">Email us: pravallikajitta07@gmail.com  <br>Phone: +1 (737) 349-2276</a>
+      </div>
+    </div>
+    <p class="footer-small">© <span id="year"></span> Creative Hut. Made with care.</p>
+  </footer>
+
+  <!-- ===== Order Tray (slide-out panel) ===== -->
+  <div class="tray-backdrop" id="trayBackdrop"></div>
+  <aside class="tray" id="tray" role="dialog" aria-label="Your order" aria-modal="false">
+    <div class="tray-head">
+      <h2>Your order</h2>
+      <button class="tray-close" id="trayClose" aria-label="Close order">&times;</button>
+    </div>
+    <div class="tray-items" id="trayItems">
+      <p class="tray-empty">Nothing added yet. Tap “Add to order” on a candle to start.</p>
+    </div>
+    <div class="tray-foot">
+      <!-- Coupon code -->
+      <div class="coupon-row" id="couponRow">
+        <div class="coupon-input-wrap">
+          <input type="text" id="couponInput" placeholder="Coupon code" autocomplete="off" spellcheck="false" />
+          <button class="coupon-apply-btn" id="couponApply">Apply</button>
+        </div>
+        <p class="coupon-status" id="couponStatus" role="status" aria-live="polite"></p>
+      </div>
+      <!-- Subtotal + discount breakdown -->
+      <div class="tray-subtotal" id="traySubtotalRow" style="display:none;">
+        <span>Subtotal</span>
+        <span id="traySubtotal">$0</span>
+      </div>
+      <div class="tray-discount-row" id="trayDiscountRow" style="display:none;">
+        <span class="discount-label">Discount <span id="couponBadge"></span></span>
+        <span class="discount-amount" id="trayDiscount"></span>
+      </div>
+      <div class="tray-total">
+        <span>Estimated total</span>
+        <strong id="trayTotal">$0</strong>
+      </div>
+      <p class="tray-fineprint">Sending your list just starts the conversation, you pay once we confirm.</p>
+      <button class="btn btn-amber btn-full" id="sendEmail" disabled>Send order by email</button>
+    </div>
+
+    <!-- Order details form (shown after clicking Send order by email) -->
+    <div class="order-form-overlay" id="orderFormOverlay">
+      <div class="order-form-inner">
+        <div class="order-form-head">
+          <h3>Complete your order</h3>
+          <button class="tray-close" id="orderFormClose" aria-label="Close">&times;</button>
+        </div>
+        <div class="order-summary" id="orderSummary"></div>
+        <form id="orderForm" novalidate>
+          <div class="field">
+            <label for="ofName">Your name</label>
+            <input type="text" id="ofName" placeholder="Full name" required />
+          </div>
+          <div class="field">
+            <label for="ofEmail">Email</label>
+            <input type="email" id="ofEmail" placeholder="you@email.com" required />
+          </div>
+          <div class="field">
+            <label for="ofPhone">Phone <span class="opt">(optional)</span></label>
+            <input type="tel" id="ofPhone" placeholder="Phone number" />
+          </div>
+          <div class="field">
+            <label for="ofDelivery">Pickup or delivery?</label>
+            <select id="ofDelivery">
+              <option value="Pickup">Pickup</option>
+              <option value="Delivery">Delivery</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ofNotes">Any notes? <span class="opt">(optional)</span></label>
+            <textarea id="ofNotes" rows="3" placeholder="Special requests, address, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-amber btn-full">Submit order</button>
+          <p class="form-status" id="ofStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <script src="candle.js?v=2"></script>
+</body>
+</html>
